@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
 
+ <meta charset="UTF-8">
+ <title>Cadastro</title>
+ </head>
+
+<body>
+  <h1>Criar uma Conta</h1>
+
+  <div>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required><br><br>
+
+    <label for="sobrenome">Sobrenome:</label>
+    <input type="text" id="sobrenome" name="sobrenome" required><br><br>
+  </div>
+
+  <div>
+    <label for="emailTelefone">Email ou Telefone:</label>
+    <input type="text" id="emailTelefone" name="emailTelefone" required><br><br>
+
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required><br><br>
+
+    <label for="confirmarSenha">Confirmar Senha:</label>
+    <input type="password" id="confirmarSenha" name="confirmarSenha" required><br><br>
+  </div>
+
+  <label for="termos">Aceitar os Termos de Uso:</label>
+  <input type="checkbox" id="termos" name="termos" required><br><br>
+
+  <input type="submit" value="Criar Conta">
 </body>
 </html>
