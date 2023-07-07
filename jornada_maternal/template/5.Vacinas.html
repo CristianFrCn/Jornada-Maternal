@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+   <title>Vacinas</title>
+</head>
+<body>
+  <h1>Mapa de Vacinas</h1>
+
+  <h2>Usuário</h2>
+  <form>
+    <div>
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome">
+    </div>
+
+    <div>
+      <label for="dataNascimento">Data da Vacinação</label>
+      <input type="date" id="dataNascimento" name="dataNascimento">
+    </div>
+
+    <div>
+      <label for="vacinas">Vacinas:</label>
+      <select id="vacinas" name="vacinas">
+        <option value="bcg">BCG</option>
+        <option value="hepatiteB">Hepatite B</option>
+        <option value="pentavalente">Pentavalente</option>
+        <option value="poliomielite">Poliomielite</option>
+        <option value="rotavirus">Rotavírus</option>
+        <option value="pneumococo">Pneumococo</option>
+        <option value="meningococo">Meningococo</option>
+        <option value="tripliceviral">Tríplice Viral</option>
+        <option value="febreAmarela">Febre Amarela</option>
+        <option value="varicela">Varicela</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="status">Status:</label>
+      <select id="status" name="status">
+        <option value="pendente">Pendente</option>
+        <option value="concluida">Concluída</option>
+      </select>
+    </div>
+
+    <input type="submit" value="Salvar">
+  </form>
+</body>
+</html>
