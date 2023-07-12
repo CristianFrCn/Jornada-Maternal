@@ -2,32 +2,34 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <title>Inicio</title>
+  <title>Login</title>
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
   <div class="container">
     <div class="card">
-      <h1>Bem-vindo(a)</h1>
-      <h2>Jornada Maternal</h2>
+      <h1>Jornada Maternal</h1>
+      <h2>Login</h2>
       <form>
-        <div class="label-float">
+        <div class="campo-flo">
           <input type="text" id="login" name="login" required>
-          <label for="login">Login:</label>
+          <label for="login">Usuario:</label>
         </div>
 
-        <div class="label-float">
+        <div class="campo-flo">
           <input type="password" id="senha" name="senha" required>
           <label for="senha">Senha:</label>
         </div>
 
-        <input type="submit" value="Entrar" class="button">
+        <div class="centrobotao">
+          <input type="submit" value="Entrar" class="button">
+        </div>
       </form>
 
-      <div class="link-container">
+      <div class="a , p">
         <a href="#">Esqueceu a senha?</a>
+        <p>Não tem uma conta?
         <a href="#">Cadastre-se</a>
-      </div>
     </div>
   </div>
 </body>

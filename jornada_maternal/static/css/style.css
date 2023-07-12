@@ -11,32 +11,31 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
 }
-
 
 .container {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  align-items: center;
+  height: 100vh;
 }
 
 .card {
   background-color: #ffffff80;
-  padding: 30px;
+  padding: 27px;
   border-radius: 4%;
-  box-shadow: 3px 3px 1px 0px #00000070;
+  box-shadow: 4px 4px 1px 1px #00000070;
 }
 
 h1, h2 {
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: #272262;
 }
 
-.label-float input {
+.campo-flo input {
   width: 100%;
-  padding: 5px 5px;
+  padding: 10px 12px;
   display: inline-block;
   border: none;
   border-bottom: 2px solid #272262;
@@ -44,83 +43,59 @@ h1, h2 {
   outline: none;
   min-width: 180px;
   font-size: 16px;
-  transition: all 3s ease-out;
   border-radius: 0;
 }
 
-.label-float {
+.campo-flo {
   position: relative;
   padding-top: 13px;
   margin-top: 5%;
   margin-bottom: 5%;
 }
 
-.label-float input:focus {
+.campo-flo input:focus {
   border-bottom: 2px solid #4038a0;
 }
 
-.label-float label {
+.campo-flo label {
   color: #272262;
   pointer-events: none;
   position: absolute;
-  top: 0;
+  top: -7;
   left: 0;
   margin-top: 13px;
-  transition: all .3s ease-out;
 }
 
-.label-float input:focus+label {
-  font-size: 13px;
-  margin-top: 0;
-  color: .label-float input:focus;
-}
 
-button {
+.button {
   background: transparent;
   border-color: #272262;
   color: #272262;
-  padding: 7px;
-  font-weight: bold;
-  font-size: 12px;
-  margin-top: 20px;
-  border-radius: 4px;
+  padding: 8px;
+  margin-top: 22px;
+  border-radius: 6px;
   cursor: pointer;
   outline: none;
-  transition: all .5s ease-out;
 }
 
-button:hover {
+centrobotao:hover {
   background-color: #272262;
   color: #fff;
+
 }
 
-.justify-center {
+.centrobotao {
   display: flex;
   justify-content: center;
 }
 
-hr {
-  margin-top: 10%;
-  margin-bottom: 10%;
-  width: 60%;
-}
-
-p {
-  color: #272262;
-  font-size: 14px;
-  text-align: center;
-  padding: 2px;
-  width: 100%;
-}
-
-a {
+.a ,p {
   color: #253573;
   font-weight: bold;
   text-decoration: none;
-  transition: all .3s ease-out;
-}
-
-a:hover {
-  color: #253573;
-  transition: all .3s ease-out;
+  color: #272262;
+  font-size: 14px;
+  text-align: center;
+  padding: 7px;
+  width: 100%;
 }
