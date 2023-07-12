@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url(https://i.imgur.com/lbsFurA.jpg);
+  background-image: img src="{% static 'images/1.jpg' %}";
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
