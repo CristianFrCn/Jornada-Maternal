@@ -1,37 +1,59 @@
-
 {% load static %}
 <html lang="pt-br">
 <head>
+  <meta charset="UTF-8">
+  <title>Cadastro</title>
+    <link rel="stylesheet" href="{% static 'css/stylecadastro.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
 
- <meta charset="UTF-8">
- <title>Cadastro</title>
- </head>
+  </style>
+</head>
 
 <body>
-  <h1>Criar uma Conta</h1>
+  <div class="container">
+    <div class="area">
+      <div class="card-body">
+        <h1 class="botao">Cadastre-se</h1>
 
-  <div>
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required><br><br>
+        <form>
+            <div class="campo-flo">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" name="nome" required>
 
-    <label for="sobrenome">Sobrenome:</label>
-    <input type="text" id="sobrenome" name="sobrenome" required><br><br>
+
+            <label for="sobrenome">Sobrenome:</label>
+            <input type="text" class="form-control" id="sobrenome" name="sobrenome" required>
+
+
+
+            <label for="emailTelefone">Email ou Telefone:</label>
+            <input type="text" class="form-control" id="emailTelefone" name="emailTelefone" required>
+
+
+
+            <label for="senha">Senha:</label>
+            <input type="password" class="form-control" id="senha" name="senha" required>
+
+
+
+            <label for="confirmarSenha">Confirmar Senha:</label>
+            <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha" required>
+            </div>
+
+            <input type="checkbox" class="form-check-input" id="termos" name="termos" required>
+            <label class="form-check-label" for="termos">Aceitar os Termos de Uso</label>
+            <p>
+
+          <div class="botao">
+            <button type="submit" class="btn btn-primary">Criar Conta</button>
+
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 
-  <div>
-    <label for="emailTelefone">Email ou Telefone:</label>
-    <input type="text" id="emailTelefone" name="emailTelefone" required><br><br>
-
-    <label for="senha">Senha:</label>
-    <input type="password" id="senha" name="senha" required><br><br>
-
-    <label for="confirmarSenha">Confirmar Senha:</label>
-    <input type="password" id="confirmarSenha" name="confirmarSenha" required><br><br>
-  </div>
-
-  <label for="termos">Aceitar os Termos de Uso:</label>
-  <input type="checkbox" id="termos" name="termos" required><br><br>
-
-  <input type="submit" value="Criar Conta">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

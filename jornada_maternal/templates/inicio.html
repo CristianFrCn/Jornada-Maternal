@@ -4,48 +4,97 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>pagina de login</title>
+    <title>Página de Login</title>
 
-  <link rel="stylesheet" href="{% static 'style.css' %}" type='text/css'>
-{% load static %}
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css">
 </head>
 <body>
-  <h1>Início</h1>
+  <div class="container">
+    <ul class="nav nav-tabs justify-content-center">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Vacinas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Pré-natal</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Mais</a>
+      </li>
+    </ul>
 
-  <h2>Informações Pessoais</h2>
-  <form>
-    <label for="nome">Nome:</label>
-    <input type="text" id="nome" name="nome" required><br><br>
+    <h1 class="text-center">Início</h1>
 
-    <label for="dataNascimento">Data de Nascimento:</label>
-    <input type="date" id="dataNascimento" name="dataNascimento" required><br><br>
+    <h2>Informações Pessoais</h2>
+    <form>
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" class="form-control" id="nome" name="nome" required>
+      </div>
 
-    <label for="cpf">CPF:</label>
-    <input type="text" id="cpf" name="cpf" required><br><br>
+      <div class="form-group">
+        <label for="dataNascimento">Data de Nascimento:</label>
+        <input type="date" class="form-control" id="dataNascimento" name="dataNascimento" required>
+      </div>
 
-    <label for="sus">Número do SUS:</label>
-    <input type="text" id="sus" name="sus" required><br><br>
+      <div class="form-group">
+        <label for="cpf">CPF:</label>
+        <input type="text" class="form-control" id="cpf" name="cpf" required>
+      </div>
 
-    <label for="cidade">Cidade:</label>
-    <input type="text" id="cidade" name="cidade" required><br><br>
+      <div class="form-group">
+        <label for="sus">Número do SUS:</label>
+        <input type="text" class="form-control" id="sus" name="sus" required>
+      </div>
 
-    <label for="nomeCrianca">Nome da Criança:</label>
-    <input type="text" id="nomeCrianca" name="nomeCrianca" required><br><br>
+      <div class="form-group">
+        <label for="estado">Estado:</label>
+        <select class="form-control" id="estado" name="estado" required>
+          <option value="">Selecione o Estado</option>
+          <option value="AC">Acre</option>
+          <option value="AL">Alagoas</option>
+          <option value="AP">Amapá</option>
+          <option value="AM">Amazonas</option>
+          <option value="BA">Bahia</option>
+          <option value="CE">Ceará</option>
+          <option value="DF">Distrito Federal</option>
+          <option value="ES">Espírito Santo</option>
+          <option value="GO">Goiás</option>
+          <option value="MA">Maranhão</option>
+          <option value="MT">Mato Grosso</option>
+          <option value="MS">Mato Grosso do Sul</option>
+          <option value="MG">Minas Gerais</option>
+          <option value="PA">Pará</option>
+          <option value="PB">Paraíba</option>
+          <option value="PR">Paraná</option>
+          <option value="PE">Pernambuco</option>
+          <option value="PI">Piauí</option>
+          <option value="RJ">Rio de Janeiro</option>
+          <option value="RN">Rio Grande do Norte</option>
+          <option value="RS">Rio Grande do Sul</option>
+          <option value="RO">Rondônia</option>
+          <option value="RR">Roraima</option>
+          <option value="SC">Santa Catarina</option>
+          <option value="SP">São Paulo</option>
+          <option value="SE">Sergipe</option>
+          <option value="TO">Tocantins</option>
+        </select>
+      </div>
 
-    <input type="submit" value="Salvar">
-  </form>
+      <div class="form-group">
+        <label for="cidade">Cidade:</label>
+        <input type="text" class="form-control" id="cidade" name="cidade" required>
+      </div>
 
-  <hr>
+      <div class="form-group">
+        <label for="nomeCrianca">Nome da Criança:</label>
+        <input type="text" class="form-control" id="nomeCrianca" name="nomeCrianca" required>
+      </div>
 
-  <h2>Vacinas</h2>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </form>
 
-  <hr>
-
-  <h2>Prenatal</h2>
-
-  <hr>
-
-  <h2>Mais</h2>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </div>
 </body>
 </html>

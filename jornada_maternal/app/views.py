@@ -5,6 +5,7 @@ def index(request):
     return render(request, 'index.html')
 def redefenir(request):
     return render(request, 'redefenir.html')
+
 def cadastro(request):
     return render(request, 'cadastro.html')
 def inicio(request):

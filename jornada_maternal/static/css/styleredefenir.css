@@ -17,40 +17,33 @@ body {
 
 .area {
   background-color: #ffffff80;
-  padding: 15px;
   border-radius: 5%;
   box-shadow: 4px 4px 1px 1px #00000070;
-}
-
-h1, h2 {
-  text-align: center;
-  margin-bottom: 12px;
+  font-weight: bold;
   color: #272262;
+  text-align: center;
+  padding: 10px;
+  width: 140%;
 }
 
 .campo-flo input {
 
   width: 100%;
   padding: 10px 12px;
-
+  display: inline-block;
   border: none;
   border-bottom: 2px solid #272262;
   background-color: transparent;
   outline: none;
-  min-width: 180px;
   font-size: 16px;
   border-radius: 0;
 }
 
 .campo-flo {
   position: relative;
-  padding-top: 13px;
+  padding-top: 5px;
   margin-top: 5%;
   margin-bottom: 5%;
-}
-
-.campo-flo input:focus {
-  border-bottom: 2px solid #4038a0;
 }
 
 .campo-flo label {
@@ -59,8 +52,9 @@ h1, h2 {
   position: absolute;
   top: -9;
   left: 0;
-  margin-top: 13px;
+  margin-top: 10px;
 }
+
 
 .button {
   background: transparent;
@@ -68,29 +62,12 @@ h1, h2 {
   color: #272262;
   padding: 8px;
   margin-top: 22px;
-  border-radius: 6px;
+  border-radius: 1Spx;
   cursor: pointer;
   outline: none;
 }
 
-centrobotao:hover {
-  background-color: #272262;
-  color: #fff;
-
-}
 
 .centrobotao {
-  display: flex;
   justify-content: center;
-}
-
-.a ,p {
-  color: #253573;
-  font-weight: bold;
-  text-decoration: none;
-  color: #272262;
-  font-size: 14px;
-  text-align: center;
-  padding: 7px;
-  width: 100%;
 }
