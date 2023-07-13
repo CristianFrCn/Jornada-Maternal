@@ -1,22 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <title>Chat Bot</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/chat.css">
 </head>
 <body>
-  <table>
-    <tr>
-      <td>Bot:</td>
-      <td>Olá! Sou um chat bot especializado em gestantes. Posso fornecer informações e responder suas dúvidas sobre alimentação, cuidados e muito mais. Como posso ajudar você hoje?</td>
-    </tr>
-    <tr>
-      <td>Mensagem:</td>
-      <td><textarea id="user-input" placeholder="Digite sua mensagem..." rows="4" cols="50"></textarea></td>
-    </tr>
-    <tr>
-      <td><button>Enviar</button></td>
-      <td><button>Voltar</button></td>
-    </tr>
-  </table>
+  <div class="container">
+    <div class="area">
+      <div class="chat-bubble">
+        <span class="chat-bot">Bot:</span>
+        <span>Olá! Sou um chat bot especializado em gestantes. Posso fornecer informações e responder suas dúvidas sobre alimentação, cuidados e muito mais. Como posso ajudar você hoje?</span>
+      </div>
+      <div class="user-input">
+        <span class="chat-bot">Mensagem:</span>
+        <textarea id="user-input" placeholder="Digite sua mensagem..." rows="4"></textarea>
+      </div>
+      <div class="button-row">
+        <button class="btn btn-primary">Enviar</button>
+        <button class="btn btn-secondary">Voltar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

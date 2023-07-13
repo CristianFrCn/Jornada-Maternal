@@ -1,0 +1,38 @@
+{% load static %}
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="{% static 'css/loginusu.css' %}">
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Login</h1>
+      <form>
+        <div class="campo-flo">
+          <input type="text" id="login" name="login" required>
+          <label for="login">Usuario:</label>
+        </div>
+
+        <div class="campo-flo">
+          <input type="password" id="senha" name="senha" required>
+          <label for="senha">Senha:</label>
+        </div>
+
+        <div class="centrobotao">
+          <input type="submit" value="Entrar" class="centrobotao">
+        </div>
+      </form>
+
+      <div class="a ,p">
+        <a href="redefenir">Esqueceu a senha?</a>
+        <p>Não tem uma conta?
+        <a href="cadastro">Cadastre-se</a>
+    </div>
+  </div>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>

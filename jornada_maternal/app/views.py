@@ -1,24 +1,24 @@
 from django.shortcuts import render
 
 
-def index(request):
-    return render(request, 'index.html')
+def site(request):
+    return render(request, 'site.html')
 def redefenir(request):
     return render(request, 'redefenir.html')
 
 def cadastro(request):
     return render(request, 'cadastro.html')
-def inicio(request):
-    return render(request, 'inicio.html')
-def abaVacina(request):
+def login(request):
+    return render(request, 'loginusuario.html')
+def vacina(request):
     return render(request, 'abaVacina.html')
-def abaPreNatal(request):
+def prenatal(request):
     return render(request, 'abaPreNatal.html')
-def abaMais(request):
+def mais(request):
     return render(request, 'abaMais.html')
-def subAmamentacao(request):
+def amamentacao(request):
     return render(request, 'subAmamentacao.html')
-def subNoticias(request):
+def noticias(request):
     return render(request, 'subNoticias.html')
-def subChat(request):
-    return render(request, 'redefenir.html')
+def chat(request):
+    return render(request, 'subChat.html')

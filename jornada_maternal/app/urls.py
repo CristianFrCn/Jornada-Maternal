@@ -4,14 +4,15 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
+    path('', views.site, name='site'),
+    path('login/', views.login, name='login'),
     path('redefenir/', views.redefenir, name='redefenir' ),
     path('cadastro/', views.cadastro, name='cadastro'),
-    path('inicio/', views.inicio, name='inicio'),
-    path('abaVacina/', views.abaVacina, name='abaVacina'),
-    path('abaPreNatal/', views.abaPreNatal, name='abaVacina'),
-    path('abaMais/', views.abaMais, name='abaMais'),
-    path('subAmamentacao/', views.subAmamentacao, name='subAmamentacao'),
-    path('subNoticias/', views.subNoticias, name='subNoticias'),
+    path('vacina/', views.vacina, name='vacina'),
+    path('prenatal/', views.prenatal, name='prenatal'),
+    path('mais/', views.mais, name='mais'),
+    path('amamentacao/', views.amamentacao, name='amamentacao'),
+     path('chat/', views.chat, name='chat'),
+    path('noticias/', views.noticias, name='noticias'),
 
     ]
