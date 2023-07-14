@@ -1,28 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Vacinas</title>
-    <link rel="stylesheet" href="/static/css/vacina1.css">
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Vacinas</title>
+      <link rel="stylesheet" href="{% static 'css/vacina1.css' %}">
 </head>
 <body>
   <div class="container">
     <div class="area">
       <h1>Mapa de Vacinas</h1>
       <form>
-        <div class="campo-flo">
+        <div class="form-group">
           <label for="nome">Nome:</label>
-          <input type="text" id="nome" name="nome">
+          <input type="text" class="form-control" id="nome" name="nome">
         </div>
 
-        <div class="campo-flo">
+        <div class="form-group">
           <label for="dataNascimento">Data da Vacinação</label>
-          <input type="date" id="dataNascimento" name="dataNascimento">
+          <input type="date" class="form-control" id="dataNascimento" name="dataNascimento">
         </div>
 
-        <div class="campo-flo">
+        <div class="form-group">
           <label for="vacinas">Vacinas:</label>
-          <select id="vacinas" name="vacinas">
+          <select class="form-control" id="vacinas" name="vacinas">
             <option value="bcg">BCG</option>
             <option value="hepatiteB">Hepatite B</option>
             <option value="pentavalente">Pentavalente</option>
@@ -36,16 +38,16 @@
           </select>
         </div>
 
-        <div class="campo-flo">
+        <div class="form-group">
           <label for="status">Status:</label>
-          <select id="status" name="status">
+          <select class="form-control" id="status" name="status">
             <option value="pendente">Pendente</option>
             <option value="concluida">Concluída</option>
           </select>
         </div>
 
         <div class="botao">
-          <input type="submit" value="Salvar">
+          <input type="submit" value="Salvar" class="btn btn-primary">
         </div>
       </form>
     </div>

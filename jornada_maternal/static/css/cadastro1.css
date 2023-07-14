@@ -1,7 +1,7 @@
 body {
   background-image: url(/static/images/Login2.jpg);
   background-repeat: no-repeat;
-  Background-position: center center;
+  background-position: center center;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -12,6 +12,7 @@ body {
   align-items: center;
   height: 100vh;
 }
+
 .area {
   background-color: #ffffff80;
   padding: 25px;
@@ -22,9 +23,9 @@ body {
 h1 {
   color: #027789;
   margin-bottom: 30px;
-  }
+}
 
-.campo-flo input {
+.form-control {
   background-color: transparent;
   width: 100%;
   padding: 10px 12px;
@@ -35,14 +36,12 @@ h1 {
   min-width: 180px;
   font-size: 16px;
   border-radius: 0;
+  margin-bottom: 20px;
 }
 
-.campo-flo {
+.form-group {
   position: relative;
-  padding-top: 13px;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  }
+}
 
 .botao {
   display: flex;

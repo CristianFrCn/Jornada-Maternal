@@ -1,29 +1,28 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Redefinir sua senha</title>
   <link rel="stylesheet" href="{% static 'css/2redefenir.css' %}">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-  <div class="container">
+ <div class="container">
     <div class="area">
       <h1>Esqueceu a senha</h1>
       <h5>Insira o código que iremos enviar a você</h5>
       <form>
-        <div class="campo-flo">
-          <input type="text" id="login" name="login">
+        <div class="form-group">
           <label for="login">Email ou Telefone:</label>
+          <input type="text" class="form-control" id="login" name="login">
         </div>
         <div class="centrobotao">
-          <input type="submit" value="Enviar Código" class="button" >
-          <a href="#"></a>
+          <input type="submit" value="Enviar Código" class="button">
           <input type="submit" value="Reenviar Código" class="button">
-          <a href="#"></a>
           <input type="submit" value="Voltar" class="button">
-          <a href="site"></a>
-            </div>
+        </div>
       </form>
     </div>
   </div>

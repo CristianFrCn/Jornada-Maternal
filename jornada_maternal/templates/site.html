@@ -1,16 +1,18 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Inicial</title>
 
     <link rel="stylesheet" href="{% static 'css/site.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
-  <div class="container">
-    <div class="area">
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+    <div class="container">
+        <div class="area">
+  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
   <a class="navbar-brand" href="#">
     <img src="{% static 'images/back.png' %}" width="250" alt="Logo" class="img-fluid">
   </a>
@@ -36,23 +38,22 @@
       </li>
     </ul>
     <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar"
+    aria-label ="Pesquisar">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
     </form>
-  </div>
-</nav>
-
-<div class="container pag">
-  <div class="row">
-    <div class="col-md-8">
-      <h1>Página Inicial</h1>
-      <p>Bem-vindo ao nosso site! Aqui você encontrará informações e recursos úteis sobre maternidade, gestação, cuidados pré-natais e muito mais. Nossa missão é fornecer conteúdo de qualidade para ajudar e informar todas as futuras mamães e suas famílias.</p>
-      <p>Explore as diferentes seções do nosso site para encontrar artigos, dicas, vídeos e informações relevantes para cada fase da gestação. Também oferecemos informações sobre vacinas recomendadas durante a gravidez, além de dicas de cuidados e bem-estar para mamãe e bebê.</p>
-      <p>Estamos aqui para apoiá-la durante toda a jornada da maternidade. Sinta-se à vontade para navegar em nosso site e aproveitar todos os recursos disponíveis. Não hesite em entrar em contato caso tenha alguma dúvida ou precise de orientação. Desejamos a você uma gestação saudável e feliz!</p>
     </div>
-    <div class="col-md-4">
-      <div class="video-container">
-        <video width="100%" height="auto" controls>
+    </nav>
+<div class="container pag">
+     <div class="row">
+     <div class="col-md-8">
+     <h1>Página Inicial</h1>
+     <p>Bem-vindo ao nosso site! Aqui você encontrará informações e recursos úteis sobre maternidade, gestação, cuidados pré-natais e muito mais. Nossa missão é fornecer conteúdo de qualidade para ajudar e informar todas as futuras mamães e suas famílias.</p>
+     <p>Explore as diferentes seções do nosso site para encontrar artigos, dicas, vídeos e informações relevantes para cada fase da gestação. Também oferecemos informações sobre vacinas recomendadas durante a gravidez, além de dicas de cuidados e bem-estar para mamãe e bebê.</p>
+     <p>Estamos aqui para apoiá-la durante toda a jornada da maternidade. Sinta-se à vontade para navegar em nosso site e aproveitar todos os recursos disponíveis. Não hesite em entrar em contato caso tenha alguma dúvida ou precise de orientação. Desejamos a você uma gestação saudável e feliz!</p></div>
+     <div class="col-md-4">
+     <div class="video-container">
+     <video width="100%" height="auto" controls>
           <source src="{% static 'video/vivi.mp4' %}" type="video/mp4">
           Seu navegador não suporta o elemento de vídeo.
         </video>
@@ -73,11 +74,10 @@
       </div>
     </div>
   </div>
-</div>
+    </div>
 
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
