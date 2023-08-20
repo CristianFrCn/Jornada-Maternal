@@ -1,0 +1,66 @@
+{% extends 'adicionaisinformacoes.html' %}
+{% load static %}
+{% block title%}Read Gestante{% endblock %}
+{% block body%}
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col">
+      <h5>Nome da Gestante</h5>
+    </div>
+    <div class="col">
+      <h5>CPF</h5>
+    </div>
+    <div class="col">
+      <h5>Idade</h5>
+    </div>
+    <div class="col">
+      <h5>Sus</h5>
+    </div>
+    <div class="col">
+      <h5>Endereço</h5>
+    </div>
+        </div>
+    <div class="col">
+      <h5>Genero</h5>
+    </div>
+      </div>
+    <div class="col">
+      <h5>Nome da Criança</h5>
+
+
+    <div class="col">
+      <h5>Editar</h5>
+    </div>
+    <div class="col">
+      <h5>Excluir</h5>
+    </div>
+  </div>
+  {% for cliente in clientes %}
+  <div class="row">
+    <div class="col">
+      <h5>{{ cliente.nome }}</h5>
+    </div>
+    <div class="col">
+      <h5>{{ cliente.cpf }}</h5>
+    </div>
+    <div class="col">
+      <h5>{{ cliente.idade }}</h5>
+    </div>
+    <div class="col">
+      <h5>{{ cliente.endereco }}</h5>
+    </div>
+    <div class="col">
+      <h5>{{ cliente.genero }}</h5>
+    </div>
+    <div class="col">
+      <h5><a href="update_Gestante/{{ Gestante.id }}"><img src="{% static 'images/editar.png' %}" height="30px"></a></h5>
+    </div>
+    <div class="col">
+      <h5><h5><a href="delete_Gestante/{{ Gestante.id }}"><img src="{% static 'images/excluir.png' %}" height="30px"></a></h5></h5>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+{% endblock %}
