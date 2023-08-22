@@ -1,6 +1,6 @@
 {% extends 'adicionaisinformacoes.html' %}
 {% load static %}
-{% block title%}Read Gestante{% endblock %}
+{% block title%}Leitura dos dados da Gestante{% endblock %}
 {% block body%}
 <div class="container-fluid">
   <div class="row">
@@ -36,22 +36,22 @@
       <h5>Excluir</h5>
     </div>
   </div>
-  {% for cliente in clientes %}
+  {% for Gestante in Gestante %}
   <div class="row">
     <div class="col">
-      <h5>{{ cliente.nome }}</h5>
+      <h5>{{ Gestante.nome }}</h5>
     </div>
     <div class="col">
-      <h5>{{ cliente.cpf }}</h5>
+      <h5>{{ Gestante.cpf }}</h5>
     </div>
     <div class="col">
-      <h5>{{ cliente.idade }}</h5>
+      <h5>{{ Gestante.idade }}</h5>
     </div>
     <div class="col">
-      <h5>{{ cliente.endereco }}</h5>
+      <h5>{{ Gestante.endereco }}</h5>
     </div>
     <div class="col">
-      <h5>{{ cliente.genero }}</h5>
+      <h5>{{ Gestante.genero }}</h5>
     </div>
     <div class="col">
       <h5><a href="update_Gestante/{{ Gestante.id }}"><img src="{% static 'images/editar.png' %}" height="30px"></a></h5>

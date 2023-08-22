@@ -23,19 +23,22 @@ def noticias(request):
 def chat(request):
     return render(request, 'subChat.html')
 
-    def create_adicional(request):
+def cep(request):
+    return render(request, 'cep.html')
+
+def create_Gestante(request):
         Gestante_form =   GestanteForm(request.POST or None, request.FILES or None)
         if (Gestante_form.is_valid()):
             Gestante =   Gestante_form.save(commit=False)
             Gestante.save()
-            return redirect("read_adicional")
-        return render(request, 'create_adicional.html', {'cliente_form': cliente_form})
+            return redirect("read_Gestante")
+        return render(request, 'create_Gestante.html', {'Gestante_form': Gestante_form})
 
-    def read_adicional(request):
+    def read_Gestante(request):
         Gestante = Gestante.objects.all()
-        return render(request, 'gestante_read.html', {'clientes': clientes})
+        return render(request, 'Gestante_read.html', {'Gestante': Gestante})
 
-    def update_adicional(request, id):
+    def update_Gestante(request, id):
         Gestante = get_object_or_404(Gestante, pk=id)
         Gestante_form = GestanteForm(request.POST or None,
                                    request.FILES or None,
@@ -43,10 +46,10 @@ def chat(request):
         if (Gestante_form.is_valid()):
             Gestante = Gestante_form.save(commit=False)
             Gestante.save()
-            return redirect("read_cliente")
-        return render(request, 'create_adicional.html', {'cliente_form': cliente_form})
+            return redirect("read_Gestante")
+        return render(request, 'create_Gestante.html', {'Gestante_form': Gestante_form})
 
-    def delete_adicional(request, id):
+    def delete_Gestante(request, id):
         Gestante = get_object_or_404(Gestante, pk=id)
         Gestante.delete()
         return redirect("read_Gestante")
