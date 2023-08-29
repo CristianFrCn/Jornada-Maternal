@@ -26,7 +26,8 @@ def chat(request):
 def informacoes(request):
     return render(request, 'adicionarinformacoes.html')
 
-
+def perfilusu(request):
+    return render(request, 'perfilusu.html')
 
 def cep(request):
     return render(request, 'cep.html')

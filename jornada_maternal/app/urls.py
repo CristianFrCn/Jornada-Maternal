@@ -24,8 +24,10 @@ urlpatterns = [
     path('informacoes/vacina/', views.vacina, name='vacina'),
     path('informacoes/prenatal', views.prenatal, name='prenatal'),
 
+    path('chat/site/', views.site, name='site'),
+    path('login/redefenir/site/', views.site, name='site'),
 
-
+    path('perfilusu', views.perfilusu, name='perfilusu'),
 
     path('create_cliente', views.create_cliente, name='create_cliente'),
     path('read_cliente', views.read_cliente, name='read_cliente'),
