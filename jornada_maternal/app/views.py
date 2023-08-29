@@ -27,10 +27,8 @@ def informacoes(request):
     return render(request, 'adicionarinformacoes.html')
 
 def perfilusu(request):
-    return render(request, 'perfilusu.html')
+    return render(request, 'cliente_read.html')
 
-def cep(request):
-    return render(request, 'cep.html')
 
 def create_cliente(request):
     cliente_form = ClienteForm(request.POST or None, request.FILES or None)

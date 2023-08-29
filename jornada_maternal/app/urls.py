@@ -8,7 +8,6 @@ router = routers.DefaultRouter()
 router.register(r'cliente', ClienteViewSet, basename="Cliente")
 
 urlpatterns = [
-    path("cep/<int:id>", views.cep, name='cep'),
     path('', views.site, name='site'),
     path('login/', views.login, name='login'),
     path('login/redefenir/', views.redefenir, name='redefenir' ),
@@ -27,7 +26,6 @@ urlpatterns = [
     path('chat/site/', views.site, name='site'),
     path('login/redefenir/site/', views.site, name='site'),
 
-    path('perfilusu', views.perfilusu, name='perfilusu'),
 
     path('create_cliente', views.create_cliente, name='create_cliente'),
     path('read_cliente', views.read_cliente, name='read_cliente'),
