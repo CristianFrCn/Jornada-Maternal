@@ -15,10 +15,16 @@ urlpatterns = [
     path('login/cadastro/', views.cadastro, name='cadastro'),
     path('vacina/', views.vacina, name='vacina'),
     path('prenatal/', views.prenatal, name='prenatal'),
+    path('informacoes/', views.informacoes, name='informacoes'),
     path('mais/', views.mais, name='mais'),
     path('amamentacao/', views.amamentacao, name='amamentacao'),
     path('chat/', views.chat, name='chat'),
     path('noticias/', views.noticias, name='noticias'),
+
+    path('informacoes/vacina/', views.vacina, name='vacina'),
+    path('informacoes/prenatal', views.prenatal, name='prenatal'),
+
+
 
 
     path('create_cliente', views.create_cliente, name='create_cliente'),

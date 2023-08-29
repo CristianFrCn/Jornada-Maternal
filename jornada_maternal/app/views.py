@@ -23,6 +23,10 @@ def noticias(request):
 def chat(request):
     return render(request, 'subChat.html')
 
+def informacoes(request):
+    return render(request, 'adicionarinformacoes.html')
+
+
 
 def cep(request):
     return render(request, 'cep.html')
