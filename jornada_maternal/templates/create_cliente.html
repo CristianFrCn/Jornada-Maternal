@@ -1,11 +1,11 @@
-{% extends 'site.html' %}
+{% extends 'adiionarinformacoes.html' %}
 {% load static %}
 {% block title%}Cadastrar Informações{% endblock %}
 {% block body%}
 <form id="form" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {{ cliente_form }}
-    <a class="button" onclick="findCEP2();" type="submit">Buscar CEP</a>
+    <a class="button"   type="submit">salvar</a>
     <button type="submit">Salvar</button>
 </form>
 {% endblock %}
