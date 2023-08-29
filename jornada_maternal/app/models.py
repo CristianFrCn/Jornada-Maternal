@@ -1,5 +1,5 @@
 from django.db import models
-class Gestante(models.Model):
+class Cliente(models.Model):
     nome  = models.CharField(max_length=40)
     cpf= models.CharField(max_length=11)
     idade = models.IntegerField()

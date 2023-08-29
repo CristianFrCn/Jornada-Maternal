@@ -1,7 +1,7 @@
-from .models import Gestante
-from rest_framework import  serializers
+from .models import Cliente
+from rest_framework import serializers
 
-class GestanteSerializers(serializers.modelsSerializers);
+class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
-        models = Gestante
+        model = Cliente
         fields = ['nome', 'cpf', 'idade','sus','endereco','genero','crianca']

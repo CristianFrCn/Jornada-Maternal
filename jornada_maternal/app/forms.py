@@ -1,8 +1,8 @@
 from django.forms import ModelForm
 from django import forms
-from .models import Gestante
+from .models import Cliente
 
-class GestanteForm(ModelForm):
+class ClienteForm(ModelForm):
     class Meta:
-        model = Gestante
+        model = Cliente
         fields = ['nome', 'cpf', 'idade','sus','endereco','genero','crianca']
