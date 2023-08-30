@@ -1,38 +1,99 @@
-{% extends 'menu.html' %}
 {% load static %}
-{% block title%}Read Clientes{% endblock %}
-{% block body%}
-<div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <h5>Nome</h5>
-    </div>
-    <div class="col">
-      <h5>data de nascimento</h5>
-    </div>
-    <div class="col">
-      <h5>cpf</h5>
-    </div>
-    <div class="col">
-      <h5>idade da criança</h5>
-    </div>
-    <div class="col">
-      <h5>sus</h5>
-    </div>
-    <div class="col">
-      <h5>estado</h5>
-    </div>
-    <div class="col">
-      <h5>cidade</h5>
-    </div>
-       <div class="col">
-      <h5>nome da Criança</h5>
-    </div>
-       <div class="col">
-      <h5>Genero da Criança</h5>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Página de Login</title>
+       <link rel="stylesheet" href="{% static 'css/informacoesadicionais.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <div class="container">
+    <ul class="nav nav-tabs justify-content-between">
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="vacina">Vacinas</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" href="prenatal">Pré-natal</a>
+      </li>
+      <li class="nav-item ml-auto">
+        <a class="nav-link text-dark" href="#">Perfil do Usuário</a>
+      </li>
+    </ul>
+
+<h1 class="text-center">Informações Adicionais da Gestante</h1>
+
+    <form>
+      <div class="col">
+        <h5>Nome:</h5>
+        <input class="form-control" type="text" placeholder="" readonly>
+
+      </div>
+
+
+
+      <div class="col">
+        <h5>data de nascimento</h5>
+        <input class="form-control" type="text" placeholder="" readonly>
+
+      </div>
+
+      <div class="col">
+        <h5>cpf</h5>
+        <input class="form-control" type="text" placeholder="" readonly>
+
+      </div>
+
+      <div class="col">
+        <h5>idade da crianca</h5>
+        <input class="form-control" type="text" placeholder="" readonly>
+
+      </div>
+
+      <div class="col">
+        <h5>sus</h5>
+        <input class="form-control" type="text" placeholder="" readonly>
+
+      </div>
+
+
+      <div class="col">
+       <h5>estado</h5>
+       <input class="form-control" type="text" placeholder="" readonly>
+
+      </div>
+
+      <div class="col">
+       <h5>cidade</h5>
+        <input class="form-control" type="text" placeholder="" readonly>
+
+      </div>
+
+      <div class="col">
+        <h5>nome da crianca</h5>
+        <input class="form-control" type="text" placeholder="" readonly>
+
+      </div>
+
+      <div class="col">
+       <h5>genero da crianca</h5>
+        <input class="form-control" type="text" placeholder="" readonly>
+
+   <div class="text-center">
+          <div class="col">
+      <h5>Editar</h5>
     </div>
 
-  {% for cliente in clientes %}
+      <div class="col">
+      <h5>Excluir</h5>
+    </div>
+</div>
+
+      </div>
+
+    {% for cliente in clientes %}
   <div class="row">
     <div class="col">
       <h5>{{ cliente.nome }}</h5>
@@ -65,14 +126,15 @@
     <div class="col">
       <h5>{{ cliente.generocrianca }}</h5>
     </div>
+
+
     <div class="col">
-      <h5><a href="update_cliente/{{ cliente.id }}"><img src="{% static 'images/editar.png' %}" height="30px"></a></h5>
+      <h5><a href="update_cliente/{{ cliente.id }}"> <img src="{% static 'images/editar.png' %}" height="30px"></a></h5>
     </div>
     <div class="col">
-      <h5><h5><a href="delete_cliente/{{ cliente.id }}"><img src="{% static 'images/excluir.png' %}" height="30px"></a></h5></h5>
+      <h5><h5><a href="delete_cliente/{{ cliente.id }}"> <img src="{% static 'images/excluir.png' %}" height="30px"></a></h5>
     </div>
   </div>
 
   {% endfor %}
 </div>
-{% endblock %}

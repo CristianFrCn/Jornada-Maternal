@@ -26,6 +26,8 @@ urlpatterns = [
     path('chat/site/', views.site, name='site'),
     path('login/redefenir/site/', views.site, name='site'),
 
+    path('menu', views.menu, name='menu'),
+
 
     path('create_cliente', views.create_cliente, name='create_cliente'),
     path('read_cliente', views.read_cliente, name='read_cliente'),

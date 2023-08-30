@@ -29,6 +29,8 @@ def informacoes(request):
 def perfilusu(request):
     return render(request, 'cliente_read.html')
 
+def menu(request):
+    return render(request, 'cliente_read.html')
 
 def create_cliente(request):
     cliente_form = ClienteForm(request.POST or None, request.FILES or None)
