@@ -3,8 +3,6 @@ from django.urls import path, include
 from rest_framework import routers
 from .viewsets import ClienteViewSet
 from . import views
-from django.urls import path
-
 
 router = routers.DefaultRouter()
 router.register(r'cliente', ClienteViewSet, basename="Cliente")
@@ -23,10 +21,10 @@ urlpatterns = [
     path('noticias/', views.noticias, name='noticias'),
     path('search/', views.search_results, name='search_results'),
     path('menu', views.menu, name='menu'),
-    path('weather', views.weather, name='weather'),
+
+    path('search/', views.search_results, name='search_results'),
 
 
-    path('search_results/', views.search_results, name='search_results'),
 
 
     path('cep', views.cep, name='cep'),

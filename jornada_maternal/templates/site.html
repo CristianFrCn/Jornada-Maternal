@@ -13,99 +13,102 @@
 
 
     <div id="popup" class="alert alert" role="alert">
-      <p class="fs-4">Bem-vindo(a), aqui você encontrará dicas sobre como manter uma gestação saúdavel!</p>
+      <p class="fs-4">Bem-vindo(a), aqui você encontrará dicas sobre como manter uma gestação saudável!</p>
       <button id="closeButton"  class="btn btn-outline-dark">Fechar</button>
     </div>
 
 
     <div class="container">
         <div class="area">
-  <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
-  <a class="navbar-brand" href="#">
-    <img src="{% static 'images/back.png' %}" width="250" alt="Logo" class="img-fluid">
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Início</a>
-      </li>
-        <li class="nav-item">
-        <a class="nav-link" href="{% url 'login' %}">Login </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'vacina' %}">Vacina</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="{% url 'prenatal' %}">PréNatal</a>
-      </li>
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Cadastro de Pacientes
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="{% url 'create_cliente' %}">Cadastrar</a>
-          <a class="dropdown-item" href="{% url 'read_cliente' %}">Visualizar</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="chat"> esse </a>
+            <nav class="navbar navbar-expand-lg navbar-light bg-transparent centered-navbar">
+                <a class="navbar-brand" href="#">
+                    <img src="{% static 'images/back.png' %}" width="250" alt="Logo" class="img-fluid">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'login' %}">Login </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'vacina' %}">Vacina</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'prenatal' %}">PréNatal</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Cadastro de Pacientes
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{% url 'create_cliente' %}">Cadastrar</a>
+                                <a class="dropdown-item" href="{% url 'read_cliente' %}">Visualizar</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="chat"> esse </a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="maisDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Mais
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="maisDropdown">
+                                <a class="dropdown-item" href="{% url 'amamentacao' %}">Amamentação</a>
+                                <a class="dropdown-item" href="{% url 'noticias' %}">Noticias</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{% url 'chat' %}">Envie sua Sugestão</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline ml-auto" id="search-form">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Pesquise sobre sua gestação" id="search-input">
+                        <button class="btn btn-outline-dark search-button my-2 my-sm-0" type="button" id="search-button">Pesquisar</button>
+                    </form>
+                </div>
+            </nav>
+            <div class="container pag">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1>Página Inicial</h1>
+                        <p>Bem-vindo ao nosso site! Aqui você encontrará informações e recursos úteis sobre maternidade, gestação, cuidados pré-natais e muito mais. Nossa missão é fornecer conteúdo de qualidade para ajudar e informar todas as futuras mamães e suas famílias.</p>
+                        <p>Explore as diferentes seções do nosso site para encontrar artigos, dicas, vídeos e informações relevantes para cada fase da gestação. Também oferecemos informações sobre vacinas recomendadas durante a gravidez, além de dicas de cuidados e bem-estar para mamãe e bebê.</p>
+                        <p>Estamos aqui para apoiá-la durante toda a jornada da maternidade. Sinta-se à vontade para navegar em nosso site e aproveitar todos os recursos disponíveis. Não hesite em entrar em contato caso tenha alguma dúvida ou precise de orientação. Desejamos a você uma gestação saudável e feliz!</p>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="video-container">
+                            <video width="100%" height="auto" controls>
+                                <source src="{% static 'video/vivi.mp4' %}" type="video/mp4">
+                                Seu navegador não suporta o elemento de vídeo.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="imagem-container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="{% static 'images/Login3.jpg' %}" alt="Gestação 1" class="img-fluid">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="{% static 'images/Login2.jpg' %}" alt="Gestação 2" class="img-fluid">
+                        </div>
+                        <div class="col-md-4">
+                            <img src="{% static 'images/Login1.jpg' %}" alt="Gestação 3" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-<li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="maisDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Mais
-        </a>
-        <div class="dropdown-menu" aria-labelledby="maisDropdown">
-          <a class="dropdown-item" href="{% url 'amamentacao' %}">Amamentação</a>
-          <a class="dropdown-item" href="{% url 'noticias' %}">Noticias</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="{% url 'chat' %}">Envie sua Sugestão</a>
-        </div>
-
-
-    </ul>
-   <form class="form-inline" id="search-form">
-    <input class="form-control mr-sm-2" type="search" placeholder="Pesquise sobre Gestação" id="search-input">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="search-button">Pesquisar</button>
-   </form>
-    </div>
-    </nav>
-<div class="container pag">
-     <div class="row">
-     <div class="col-md-8">
-     <h1>Página Inicial</h1>
-     <p>Bem-vindo ao nosso site! Aqui você encontrará informações e recursos úteis sobre maternidade, gestação, cuidados pré-natais e muito mais. Nossa missão é fornecer conteúdo de qualidade para ajudar e informar todas as futuras mamães e suas famílias.</p>
-     <p>Explore as diferentes seções do nosso site para encontrar artigos, dicas, vídeos e informações relevantes para cada fase da gestação. Também oferecemos informações sobre vacinas recomendadas durante a gravidez, além de dicas de cuidados e bem-estar para mamãe e bebê.</p>
-     <p>Estamos aqui para apoiá-la durante toda a jornada da maternidade. Sinta-se à vontade para navegar em nosso site e aproveitar todos os recursos disponíveis. Não hesite em entrar em contato caso tenha alguma dúvida ou precise de orientação. Desejamos a você uma gestação saudável e feliz!</p></div>
-     <div class="col-md-4">
-     <div class="video-container">
-     <video width="100%" height="auto" controls>
-          <source src="{% static 'video/vivi.mp4' %}" type="video/mp4">
-          Seu navegador não suporta o elemento de vídeo.
-        </video>
-      </div>
-    </div>
-  </div>
-
-  <div class="imagem-container">
-    <div class="row">
-      <div class="col-md-4">
-        <img src="{% static 'images/Login3.jpg' %}" alt="Gestação 1" class="img-fluid">
-      </div>
-      <div class="col-md-4">
-        <img src="{% static 'images/Login2.jpg' %}" alt="Gestação 2" class="img-fluid">
-      </div>
-      <div class="col-md-4">
-        <img src="{% static 'images/Login1.jpg' %}" alt="Gestação 3" class="img-fluid">
-      </div>
-    </div>
-  </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="application/javascript" src="{% static 'js/alert.js' %}" ></script>
-    <script type="application/javascript" src="{% static 'js/barrapesquisa.js' %}" ></script>
+    <script type="application/javascript" src="{% static 'js/barra_pesquisa.js' %}" ></script>
 </body>
 </html>

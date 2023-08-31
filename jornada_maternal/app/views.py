@@ -3,9 +3,6 @@ from .utils import google_custom_search
 from .forms import ClienteForm
 from .models import Cliente
 
-import requests
-from django.http import JsonResponse
-
 
 def site(request):
     return render(request, 'site.html')
@@ -38,8 +35,8 @@ def menu(request):
 def cep(request):
     return render(request, 'cep.html')
 
-def weather(request):
-    return render(request, 'weather.html')
+
+
 
 def search_results(request):
     query = request.GET.get('q')
@@ -50,9 +47,6 @@ def search_results(request):
 
     context = {'results': results, 'query': query}
     return render(request, 'search_results.html', context)
-
-    return render(request, 'search_results.html', context)
-
 
 
 
