@@ -7,4 +7,4 @@ class ClienteViewSet(viewsets.ModelViewSet):
     serializer_class = ClienteSerializer
     queryset = Cliente.objects.all()
     filter_fields = ('nome','datanascimento','cpf','idadecrianca',
-                  'sus','estado','cidade','nomecrianca','generocrianca',)
+                  'sus','endereco','bairro','cep','cidade','uf','nomecrianca','generocrianca')

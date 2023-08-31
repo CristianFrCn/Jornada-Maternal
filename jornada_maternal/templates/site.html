@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Página Inicial</title>
+
     <link rel="stylesheet" href="{% static 'css/site.css' %}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
+
     <div id="popup" class="alert alert-info" role="alert">
       <p class="fs-4">Bem-vindo(a), aqui você encontrará dicas sobre como manter uma gestação saúdavel!</p>
       <button id="closeButton"  class="btn btn-outline-dark">Fechar</button>
     </div>
+
     <div class="container">
         <div class="area">
   <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
@@ -24,34 +28,45 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
-       <li class="nav-item">
-        <a class="nav-link" href="login">Login</a>
-      </li>
       <li class="nav-item">
         <a class="nav-link active" href="#">Início</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="vacina">Vacinas</a>
+        <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}">Login </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="prenatal">Pré Natal</a>
+        <a class="nav-link" href="{% url 'vacina' %}">Vacina</a>
       </li>
-<li class="nav-item dropdown">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'prenatal' %}">PréNatal</a>
+      </li>
+        <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Mais
+          Cadastro de Pacientes
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="amamentacao">Amamentação</a>
-          <a class="dropdown-item" href="noticias">Noticias</a>
+          <a class="dropdown-item" href="{% url 'create_cliente' %}">Cadastrar</a>
+          <a class="dropdown-item" href="{% url 'read_cliente' %}">Visualizar</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="chat">Envie sua Sugestão</a>
+          <a class="dropdown-item" href="chat"> esse </a>
         </div>
+<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="maisDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Mais
+        </a>
+        <div class="dropdown-menu" aria-labelledby="maisDropdown">
+          <a class="dropdown-item" href="{% url 'amamentacao' %}">Amamentação</a>
+          <a class="dropdown-item" href="{% url 'noticias' %}">Noticias</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="{% url 'chat' %}">Envie sua Sugestão</a>
+        </div>
+
+
     </ul>
-    <form class="form-inline">
-    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar"
-    aria-label ="Pesquisar">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
-    </form>
+   <form class="form-inline" id="search-form">
+    <input class="form-control mr-sm-2" type="search" placeholder="Pesquise sobre Gestação" id="search-input">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="button" id="search-button">Pesquisar</button>
+   </form>
     </div>
     </nav>
 <div class="container pag">
@@ -85,9 +100,11 @@
     </div>
   </div>
     </div>
-</body>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="application/javascript" src="{% static 'js/javascript.js' %}" ></script>
+    <script type="application/javascript" src="{% static 'js/barrapesquisa.js' %}" ></script>
+</body>
 </html>

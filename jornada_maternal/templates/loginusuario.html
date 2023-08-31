@@ -1,6 +1,4 @@
-
 {% load static %}
-<!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -24,20 +22,15 @@
           <label for="senha">Senha:</label>
         </div>
 
-
-
-
-
-
         <div class="centrobotao">
           <button type="button,submit" class="btn btn-outline-dark">Entrar</button>
         </div>
       </form>
 
       <div class="a ,p">
-        <a href="redefenir">Esqueceu a senha?</a>
+        <a href="{% url 'redefenir' %}">Esqueceu a senha?</a>
         <p>Não tem uma conta?
-        <a href="cadastro">Cadastre-se</a>
+        <a href="{% url 'cadastro' %}">Cadastre-se</a>
     </div>
   </div>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

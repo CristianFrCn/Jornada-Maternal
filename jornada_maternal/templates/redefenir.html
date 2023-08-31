@@ -1,6 +1,5 @@
-
 {% load static %}
-<!DOCTYPE html>
+
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
@@ -20,15 +19,12 @@
           <input type="text" class="form-control" id="login" name="login">
         </div>
         <div class="centrobotao">
-
-
-        <div class="centrobotao">
           <button type="button,submit" class="btn btn-outline-dark">Enviar Código</button>
 
           <button type="button,submit" class="btn btn-outline-dark">Reenviar Código</button>
 
           <button type="button" class="btn btn-outline-dark" onclick="enviarMensagem()">Enviar mensagem</button>
-    <a href="site" class="btn btn-outline-dark">Voltar</a>
+    <a class="btn btn-outline-dark" href="{% url 'login' %}">Voltar</a>
         </div>
         </div>
       </form>

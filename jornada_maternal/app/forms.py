@@ -6,4 +6,4 @@ class ClienteForm(ModelForm):
     class Meta:
         model = Cliente
         fields = ['nome','datanascimento','cpf','idadecrianca',
-                  'sus','estado','cidade','nomecrianca','generocrianca',]
+                  'sus','endereco','bairro','cep','cidade','uf','nomecrianca','generocrianca',]

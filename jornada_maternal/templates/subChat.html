@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{% load static %}
 <html>
 <head>
   <meta charset="UTF-8">
@@ -19,7 +19,7 @@
       </div>
      <div class="button-row">
     <button type="button" class="btn btn-outline-dark" onclick="enviarMensagem()">Enviar mensagem</button>
-    <a href="site" class="btn btn-outline-dark">Voltar</a>
+   <a class="btn btn-outline-dark"  href="{% url 'site' %}">Voltar</a>
 </div>
     </div>
   </div>

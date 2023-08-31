@@ -3,6 +3,8 @@ from django.urls import path, include
 from rest_framework import routers
 from .viewsets import ClienteViewSet
 from . import views
+from django.urls import path
+
 
 router = routers.DefaultRouter()
 router.register(r'cliente', ClienteViewSet, basename="Cliente")
@@ -10,8 +12,8 @@ router.register(r'cliente', ClienteViewSet, basename="Cliente")
 urlpatterns = [
     path('', views.site, name='site'),
     path('login/', views.login, name='login'),
-    path('login/redefenir/', views.redefenir, name='redefenir' ),
-    path('login/cadastro/', views.cadastro, name='cadastro'),
+    path('redefenir/', views.redefenir, name='redefenir' ),
+    path('cadastro/', views.cadastro, name='cadastro'),
     path('vacina/', views.vacina, name='vacina'),
     path('prenatal/', views.prenatal, name='prenatal'),
     path('informacoes/', views.informacoes, name='informacoes'),
@@ -19,14 +21,19 @@ urlpatterns = [
     path('amamentacao/', views.amamentacao, name='amamentacao'),
     path('chat/', views.chat, name='chat'),
     path('noticias/', views.noticias, name='noticias'),
-
-    path('informacoes/vacina/', views.vacina, name='vacina'),
-    path('informacoes/prenatal', views.prenatal, name='prenatal'),
-
-    path('chat/site/', views.site, name='site'),
-    path('login/redefenir/site/', views.site, name='site'),
-
+    path('search/', views.search_results, name='search_results'),
     path('menu', views.menu, name='menu'),
+    path('weather', views.weather, name='weather'),
+
+
+    path('search_results/', views.search_results, name='search_results'),
+
+
+    path('cep', views.cep, name='cep'),
+    path("api/", include(router.urls)),
+
+
+
 
 
     path('create_cliente', views.create_cliente, name='create_cliente'),

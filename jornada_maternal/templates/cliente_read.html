@@ -1,140 +1,106 @@
 {% load static %}
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Página de Login</title>
-       <link rel="stylesheet" href="{% static 'css/informacoesadicionais.css' %}">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <title>Página de Informações Adicionais</title>
+    <link rel="stylesheet" href="{% static 'css/informacoesadicionais0.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-  <div class="container">
+</head>
+<body>
+<div class="container">
     <ul class="nav nav-tabs justify-content-between">
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="vacina">Vacinas</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link text-dark" href="prenatal">Pré-natal</a>
-      </li>
-      <li class="nav-item ml-auto">
-        <a class="nav-link text-dark" href="#">Perfil do Usuário</a>
-      </li>
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="{% url 'site' %}">Início</a>
+        </li>
+
+        <li class="nav-item ml-auto">
+            <a class="nav-link text-dark" href="{% url 'site' %}">Perfil do Usuário</a>
+        </li>
     </ul>
 
-<h1 class="text-center">Informações Adicionais da Gestante</h1>
-
-    <form>
-      <div class="col">
-        <h5>Nome:</h5>
-        <input class="form-control" type="text" placeholder="" readonly>
-
-      </div>
-
-
-
-      <div class="col">
-        <h5>data de nascimento</h5>
-        <input class="form-control" type="text" placeholder="" readonly>
-
-      </div>
-
-      <div class="col">
-        <h5>cpf</h5>
-        <input class="form-control" type="text" placeholder="" readonly>
-
-      </div>
-
-      <div class="col">
-        <h5>idade da crianca</h5>
-        <input class="form-control" type="text" placeholder="" readonly>
-
-      </div>
-
-      <div class="col">
-        <h5>sus</h5>
-        <input class="form-control" type="text" placeholder="" readonly>
-
-      </div>
-
-
-      <div class="col">
-       <h5>estado</h5>
-       <input class="form-control" type="text" placeholder="" readonly>
-
-      </div>
-
-      <div class="col">
-       <h5>cidade</h5>
-        <input class="form-control" type="text" placeholder="" readonly>
-
-      </div>
-
-      <div class="col">
-        <h5>nome da crianca</h5>
-        <input class="form-control" type="text" placeholder="" readonly>
-
-      </div>
-
-      <div class="col">
-       <h5>genero da crianca</h5>
-        <input class="form-control" type="text" placeholder="" readonly>
-
-   <div class="text-center">
-          <div class="col">
-      <h5>Editar</h5>
-    </div>
-
-      <div class="col">
-      <h5>Excluir</h5>
-    </div>
-</div>
-
-      </div>
+    <h2 class="text-center">Informações Adicionais das Gestantes</h2>
 
     {% for cliente in clientes %}
-  <div class="row">
-    <div class="col">
-      <h5>{{ cliente.nome }}</h5>
+    <div class="cliente-section">
+        <div class="row mb-3">
+            <div class="col">
+                <h5>Nome:</h5>
+                <input class="form-control" type="text" value="{{ cliente.nome }}" readonly>
+            </div>
+            <div class="col">
+                <h5>CPF:</h5>
+                <input class="form-control" type="text" value="{{ cliente.cpf|slice:'0:3' }}.{{ cliente.cpf|slice:'3:6' }}.{{ cliente.cpf|slice:'6:9' }}-{{ cliente.cpf|slice:'9:11' }}" readonly>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <h5>Data de Nascimento:</h5>
+                <input class="form-control" type="text" value="{{ cliente.datanascimento|date:'d/m/Y' }}" readonly>
+            </div>
+            <div class="col">
+                <h5>Número do SUS:</h5>
+                <input class="form-control" type="text" value="{{ cliente.sus|slice:'0:3' }}.{{ cliente.sus|slice:'3:6' }}.{{ cliente.sus|slice:'6:9' }} {{ cliente.sus|slice:'9:12' }}" readonly>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <h5>Nome da Criança:</h5>
+                <input class="form-control" type="text" value="{{ cliente.nomecrianca }}" readonly>
+            </div>
+            <div class="col">
+                <h5>Gênero da Criança:</h5>
+                <input class="form-control" type="text" value="{{ cliente.generocrianca }}" readonly>
+            </div>
+            <div class="col">
+                <h5>Idade da Criança:</h5>
+                <input class="form-control" type="number" value="{{ cliente.idadecrianca }}" readonly>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <h5>Cep:</h5>
+                <input class="form-control" type="text" value="{{ cliente.cep }}" readonly>
+            </div>
+            <div class="col">
+                <h5>Endereço:</h5>
+                <input class="form-control" type="text" value="{{ cliente.endereco }}" readonly>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col">
+                <h5>Cidade:</h5>
+                <input class="form-control" type="text" value="{{ cliente.cidade }}" readonly>
+            </div>
+            <div class="col">
+                <h5>Bairro:</h5>
+                <input class="form-control" type="text" value="{{ cliente.bairro }}" readonly>
+            </div>
+            <div class="col">
+                <h5>UF:</h5>
+                <input class="form-control" type="text" value="{{ cliente.uf }}" readonly>
+            </div>
+        </div>
+        <hr>
+        <div class="row mb-3">
+            <div class="col text-center">
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <div class="mr-2">
+                        <a href="update_cliente/{{ cliente.id }}"><img src="{% static 'images/editar.png' %}" height="35px"></a>
+                    </div>
+                    <div>
+                        <a href="delete_cliente/{{ cliente.id }}"><img src="{% static 'images/excluir.png' %}" height="35px"></a>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
     </div>
-    <div class="col">
-      <h5>{{ cliente.datanascimento }}</h5>
-    </div>
-    <div class="col">
-      <h5>{{ cliente.cpf }}</h5>
-    </div>
-    <div class="col">
-      <h5>{{ cliente.idadecrianca }}</h5>
-    </div>
-    <div class="col">
-      <h5>{{ cliente.sus }}</h5>
-    </div>
-
-    <div class="col">
-      <h5>{{ cliente.estado }}</h5>
-    </div>
-
-    <div class="col">
-      <h5>{{ cliente.cidade }}</h5>
-    </div>
-
-    <div class="col">
-      <h5>{{ cliente.nomecrianca }}</h5>
-    </div>
-
-    <div class="col">
-      <h5>{{ cliente.generocrianca }}</h5>
-    </div>
-
-
-    <div class="col">
-      <h5><a href="update_cliente/{{ cliente.id }}"> <img src="{% static 'images/editar.png' %}" height="30px"></a></h5>
-    </div>
-    <div class="col">
-      <h5><h5><a href="delete_cliente/{{ cliente.id }}"> <img src="{% static 'images/excluir.png' %}" height="30px"></a></h5>
-    </div>
-  </div>
-
-  {% endfor %}
+    {% endfor %}
 </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{% static 'js/apicep.js' %}"></script>
+</body>
+</html>
