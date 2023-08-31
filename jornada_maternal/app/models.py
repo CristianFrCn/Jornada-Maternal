@@ -24,7 +24,7 @@ class Cliente(models.Model):
     cpf = models.CharField(max_length=14, unique=True, verbose_name='CPF')
     idadecrianca = models.IntegerField(verbose_name='Idade da Criança')
     sus = models.CharField(max_length=16, verbose_name='Número SUS')
-    endereco = models.CharField(max_length=9, verbose_name='Endereco')
+    endereco = models.CharField(max_length=50, verbose_name='Endereco')
     bairro = models.CharField(max_length=70, verbose_name='Bairro')
     cep = models.CharField(max_length=15, verbose_name='Cep')
     cidade = models.CharField(max_length=30, verbose_name='Cidade')
