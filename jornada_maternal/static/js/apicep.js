@@ -7,8 +7,6 @@ function findCEP2(){
         .then((response)=>response.json())
         .then((data)=>{
             console.log(data);
-            document.getElementById('id_endereco').value=data.logradouro;
-            document.getElementById('id_bairro').value=data.bairro;
             document.getElementById('id_cidade').value=data.localidade;
             document.getElementById('id_uf').value=data.uf;
         })
