@@ -35,9 +35,6 @@ def menu(request):
 def cep(request):
     return render(request, 'cep.html')
 
-
-
-
 def search_results(request):
     query = request.GET.get('q')
     if query:
@@ -47,7 +44,6 @@ def search_results(request):
 
     context = {'results': results, 'query': query}
     return render(request, 'search_results.html', context)
-
 
 
 def create_cliente(request):
@@ -60,7 +56,7 @@ def create_cliente(request):
     else:
         cliente_form = ClienteForm()
 
-    return render(request, 'adicionarinformacoes.html', {'cliente_form': cliente_form})
+    return render(request, 'cliente_create.html', {'cliente_form': cliente_form})
 
 def read_cliente(request):
     clientes = Cliente.objects.all()
@@ -75,7 +71,7 @@ def update_cliente(request, id):
         cliente = cliente_form.save(commit=False)
         cliente.save()
         return redirect("read_cliente")
-    return render(request, 'adicionarinformacoes.html', {'cliente_form':cliente_form})
+    return render(request, 'cliente_create.html', {'cliente_form':cliente_form})
 
 def delete_cliente(request, id):
     cliente = get_object_or_404(Cliente, pk=id)

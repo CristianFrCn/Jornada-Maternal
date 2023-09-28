@@ -1,11 +1,12 @@
 {% load static %}
-
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Informações Adicionais</title>
-    <link rel="stylesheet" href="{% static 'css/informacoesadicionais0.css' %}">
+    <link rel="stylesheet" href="{% static 'css/clienteread.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="container">
@@ -13,7 +14,6 @@
         <li class="nav-item">
             <a class="nav-link text-dark" href="{% url 'site' %}">Início</a>
         </li>
-
         <li class="nav-item ml-auto">
             <a class="nav-link text-dark" href="{% url 'site' %}">Perfil do Usuário</a>
         </li>
@@ -22,61 +22,61 @@
     <h2 class="text-center">Informações Adicionais das Gestantes</h2>
 
     {% for cliente in clientes %}
-    <div class="cliente-section">
+        <div class="cliente-section border-transparent">
         <div class="row mb-3">
-            <div class="col">
+            <div class="col-md-6">
                 <h5>Nome:</h5>
                 <input class="form-control" type="text" value="{{ cliente.nome }}" readonly>
             </div>
-            <div class="col">
+            <div class="col-md-6">
                 <h5>CPF:</h5>
                 <input class="form-control" type="text" value="{{ cliente.cpf|slice:'0:3' }}.{{ cliente.cpf|slice:'3:6' }}.{{ cliente.cpf|slice:'6:9' }}-{{ cliente.cpf|slice:'9:11' }}" readonly>
             </div>
         </div>
         <div class="row mb-3">
-            <div class="col">
+            <div class="col-md-6">
                 <h5>Data de Nascimento:</h5>
                 <input class="form-control" type="text" value="{{ cliente.datanascimento|date:'d/m/Y' }}" readonly>
             </div>
-            <div class="col">
+            <div class="col-md-6">
                 <h5>Número do SUS:</h5>
                 <input class="form-control" type="text" value="{{ cliente.sus|slice:'0:3' }}.{{ cliente.sus|slice:'3:6' }}.{{ cliente.sus|slice:'6:9' }} {{ cliente.sus|slice:'9:12' }}" readonly>
             </div>
         </div>
         <div class="row mb-3">
-            <div class="col">
+            <div class="col-md-4">
                 <h5>Nome da Criança:</h5>
                 <input class="form-control" type="text" value="{{ cliente.nomecrianca }}" readonly>
             </div>
-            <div class="col">
+            <div class="col-md-4">
                 <h5>Gênero da Criança:</h5>
                 <input class="form-control" type="text" value="{{ cliente.generocrianca }}" readonly>
             </div>
-            <div class="col">
+            <div class="col-md-4">
                 <h5>Idade da Criança:</h5>
                 <input class="form-control" type="number" value="{{ cliente.idadecrianca }}" readonly>
             </div>
         </div>
         <div class="row mb-3">
-            <div class="col">
+            <div class="col-md-4">
                 <h5>Cep:</h5>
                 <input class="form-control" type="text" value="{{ cliente.cep }}" readonly>
             </div>
-            <div class="col">
+            <div class="col-md-4">
                 <h5>Endereço:</h5>
                 <input class="form-control" type="text" value="{{ cliente.endereco }}" readonly>
             </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col">
-                <h5>Cidade:</h5>
-                <input class="form-control" type="text" value="{{ cliente.cidade }}" readonly>
-            </div>
-            <div class="col">
+            <div class="col-md-4">
                 <h5>Bairro:</h5>
                 <input class="form-control" type="text" value="{{ cliente.bairro }}" readonly>
             </div>
-            <div class="col">
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <h5>Cidade:</h5>
+                <input class="form-control" type="text" value="{{ cliente.cidade }}" readonly>
+            </div>
+            <div class="col-md-4">
                 <h5>UF:</h5>
                 <input class="form-control" type="text" value="{{ cliente.uf }}" readonly>
             </div>

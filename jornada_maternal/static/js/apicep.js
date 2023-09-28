@@ -7,12 +7,13 @@ function findCEP2(){
         .then((response)=>response.json())
         .then((data)=>{
             console.log(data);
+            document.getElementById('id_endereco').value=data.logradouro;
+            document.getElementById('id_bairro').value=data.bairro;
             document.getElementById('id_cidade').value=data.localidade;
             document.getElementById('id_uf').value=data.uf;
         })
         .catch((error)=>console.log("deu erro "+error));
 }
-
 
 function findCEP(){
     let cep = document.getElementById('cep').value;
@@ -26,4 +27,3 @@ function findCEP(){
             document.getElementById('result').innerText=data.localidade})
         .catch((error)=>console.log("deu erro "+error));
 }
-

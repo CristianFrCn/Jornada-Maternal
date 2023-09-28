@@ -1,0 +1,119 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Informações Adicionais da Gestante</title>
+    <link rel="stylesheet" href="{% static 'css/clientecreate.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container pag">
+    <ul class="nav nav-tabs justify-content-between">
+        <li class="nav-item">
+            <a class="nav-link text-dark" href="{% url 'site' %}">Início</a>
+        </li>
+        <li class="nav-item ml-auto">
+            <a class="nav-link text-dark" href="#">Perfil do Usuário</a>
+        </li>
+    </ul>
+
+    <h1 class="text-center">Informações Adicionais da Gestante</h1>
+
+    <form id="form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {{ cliente_form.nome.label_tag }}
+                {{ cliente_form.nome }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ cliente_form.cpf.label_tag }}
+                {{ cliente_form.cpf }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {{ cliente_form.datanascimento.label_tag }}
+                {{ cliente_form.datanascimento }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ cliente_form.sus.label_tag }}
+                {{ cliente_form.sus }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                {{ cliente_form.nomecrianca.label_tag }}
+                {{ cliente_form.nomecrianca }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ cliente_form.generocrianca.label_tag }}
+                {{ cliente_form.generocrianca }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ cliente_form.idadecrianca.label_tag }}
+                {{ cliente_form.idadecrianca }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                {{ cliente_form.cep.label_tag }}
+                {{ cliente_form.cep }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ cliente_form.endereco.label_tag }}
+                {{ cliente_form.endereco }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ cliente_form.bairro.label_tag }}
+                {{ cliente_form.bairro }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                {{ cliente_form.cidade.label_tag }}
+                {{ cliente_form.cidade }}
+            </div>
+            <div class="form-group col-md-6">
+                {{ cliente_form.uf.label_tag }}
+                {{ cliente_form.uf }}
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="button" class="btn btn-outline-dark" onclick="findCEP2();">Buscar CEP</button>
+        </div>
+
+        <div class="text-center">
+            <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#ExemploModalCentralizado">
+                Salvar
+            </button>
+            <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="TituloModalCentralizado">Deseja Salvar?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Antes de salvar, verifique se todas as informações estão corretas.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Fechar</button>
+                            <button type="submit" class="btn btn-outline-dark">Salvar mudanças</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{% static 'js/apicep.js' %}"></script>
+</body>
+</html>

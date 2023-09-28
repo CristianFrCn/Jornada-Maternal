@@ -25,13 +25,8 @@ urlpatterns = [
     path('search/', views.search_results, name='search_results'),
 
 
-
-
     path('cep', views.cep, name='cep'),
     path("api/", include(router.urls)),
-
-
-
 
 
     path('create_cliente', views.create_cliente, name='create_cliente'),

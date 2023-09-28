@@ -1,11 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
-
+/* Remova o import da fonte do Google Fonts, pois já está no HTML */
 body {
-  background-image: url(/static/images/Login.jpeg);
-     background-repeat: no-repeat;
+    background-image: url('/static/images/Login.jpeg');
+    background-repeat: repeat-Y;
     background-position: center center;
     background-size: cover;
-    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif;
 }
 
 .navbar {
@@ -18,9 +17,12 @@ body {
     height: auto;
 }
 
-.container.pag {
+.container {
     margin-top: 20px;
     margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
 }
 
 .video-container {
@@ -58,19 +60,24 @@ body {
 }
 
 .popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
-  text-align: center;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
 .popup p {
-  margin-bottom: 15px;
+    margin-bottom: 15px;
 }
 
+h1.text-center {
+    font-weight: bold;
+    font-size: 36px;
+    color: #333;
+}

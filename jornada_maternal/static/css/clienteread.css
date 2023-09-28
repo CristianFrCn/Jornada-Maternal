@@ -1,0 +1,43 @@
+/* Remova o import da fonte do Google Fonts, pois já está no HTML */
+body {
+    background-image: url('/static/images/Login.jpeg');
+    background-repeat: NO-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Roboto', sans-serif; /* Adicionado para definir a fonte */
+}
+.navbar {
+    background-color: #f8f9fa;
+    padding: 10px 0;
+}
+
+.navbar-brand img {
+    width: 250px;
+    height: auto;
+}
+
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-image: url('/static/images/Login1.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-color: #00BFFF; /* Altere a cor de fundo do conteúdo se desejar */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+}
+
+h2.text-center {
+    font-weight: bold;
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.border-transparent {
+    border: 1px solid transparent;
+}

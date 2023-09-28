@@ -6,7 +6,6 @@
         searchButton.addEventListener("click", function() {
             const searchTerm = searchInput.value;
             if (searchTerm.trim() !== "") {
-                // Redirecionar para a página de resultados de pesquisa, passando o termo de pesquisa como parâmetro
                 window.location.href = `/search/?q=${encodeURIComponent(searchTerm)}`;
             }
         });

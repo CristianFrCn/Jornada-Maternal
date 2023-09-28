@@ -1,16 +1,14 @@
 {% load static %}
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>informações adicionais da gestante</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualização de Informações da Gestante</title>
     <link rel="stylesheet" href="{% static 'css/informacoesadicionais.css' %}">
-     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
-
 <body>
 <div class="container">
     <ul class="nav nav-tabs justify-content-between">
@@ -22,47 +20,179 @@
         </li>
     </ul>
 
-    <h1 class="text-center"> Informações Adicionais da Gestante</h1>
+    <h1 class="text-center">Atualização de Informações da Gestante</h1>
 
     <form id="form" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ cliente_form.as_p }}
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                {{ cliente_form.nome.label_tag }}
+                {{ cliente_form.nome }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ cliente_form.cpf.label_tag }}
+                {{ cliente_form.cpf }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ cliente_form.datanascimento.label_tag }}
+                {{ cliente_form.datanascimento }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                {{ cliente_form.sus.label_tag }}
+                {{ cliente_form.sus }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ cliente_form.nomecrianca.label_tag }}
+                {{ cliente_form.nomecrianca }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ cliente_form.generocrianca.label_tag }}
+                {{ cliente_form.generocrianca }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                {{ cliente_form.idadecrianca.label_tag }}
+                {{ cliente_form.idadecrianca }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ cliente_form.cep.label_tag }}
+                {{ cliente_form.cep }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ cliente_form.endereco.label_tag }}
+                {{ cliente_form.endereco }}
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                {{ cliente_form.bairro.label_tag }}
+                {{ cliente_form.bairro }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ cliente_form.cidade.label_tag }}
+                {{ cliente_form.cidade }}
+            </div>
+            <div class="form-group col-md-4">
+                {{ cliente_form.uf.label_tag }}
+                {{ cliente_form.uf }}
+            </div>
+        </div>
 
         <div class="text-center">
-            <button type="button" class="btn btn-outline-dark" onclick="findCEP2();" type="submit">Buscar CEP</button>
+            <button type="button" class="btn btn-outline-dark" onclick="findCEP2();">Buscar CEP</button>
         </div>
 
         <div class="text-center">
             <button type="button" class="btn btn-outline-dark" data-toggle="modal" data-target="#ExemploModalCentralizado">
                 Salvar
             </button>
-           <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
-                 <div class="modal-dialog modal-dialog-centered" role="document">
-                     <div class="modal-content">
-                         <div class="modal-header">
-                          <h5 class="modal-title" id="TituloModalCentralizado">Deseja Salvar?</h5>
-                             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                               <span aria-hidden="true">&times;</span>
-                             </button>
-                    </div>
-                    <div class="modal-body">
-                        Antes de salvar verifique se está correto essa informação.
-                     </div>
-                    <div class="modal-footer">
-                 <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Fechar</button>
-                 <button  type="submit" class="btn btn-outline-dark">Salvar mudanças</button>
+            <div class="modal fade" id="ExemploModalCentralizado" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="TituloModalCentralizado">Deseja Salvar?</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            Antes de salvar, verifique se todas as informações estão corretas.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Fechar</button>
+                            <button type="submit" class="btn btn-outline-dark">Salvar mudanças</button>
+                        </div>
                     </div>
                 </div>
-
+            </div>
         </div>
-
     </form>
+
+
+
+    {% for cliente in clientes %}
+    <div class="cliente-section">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <h5>Nome:</h5>
+                <input class="form-control" type="text" value="{{ cliente.nome }}" readonly>
+            </div>
+            <div class="col-md-6">
+                <h5>CPF:</h5>
+                <input class="form-control" type="text" value="{{ cliente.cpf|slice:'0:3' }}.{{ cliente.cpf|slice:'3:6' }}.{{ cliente.cpf|slice:'6:9' }}-{{ cliente.cpf|slice:'9:11' }}" readonly>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <h5>Data de Nascimento:</h5>
+                <input class="form-control" type="text" value="{{ cliente.datanascimento|date:'d/m/Y' }}" readonly>
+            </div>
+            <div class="col-md-6">
+                <h5>Número do SUS:</h5>
+                <input class="form-control" type="text" value="{{ cliente.sus|slice:'0:3' }}.{{ cliente.sus|slice:'3:6' }}.{{ cliente.sus|slice:'6:9' }} {{ cliente.sus|slice:'9:12' }}" readonly>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <h5>Nome da Criança:</h5>
+                <input class="form-control" type="text" value="{{ cliente.nomecrianca }}" readonly>
+            </div>
+            <div class="col-md-4">
+                <h5>Gênero da Criança:</h5>
+                <input class="form-control" type="text" value="{{ cliente.generocrianca }}" readonly>
+            </div>
+            <div class="col-md-4">
+                <h5>Idade da Criança:</h5>
+                <input class="form-control" type="number" value="{{ cliente.idadecrianca }}" readonly>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <h5>Cep:</h5>
+                <input class="form-control" type="text" value="{{ cliente.cep }}" readonly>
+            </div>
+            <div class="col-md-4">
+                <h5>Endereço:</h5>
+                <input class="form-control" type="text" value="{{ cliente.endereco }}" readonly>
+            </div>
+            <div class="col-md-4">
+                <h5>Bairro:</h5>
+                <input class="form-control" type="text" value="{{ cliente.bairro }}" readonly>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-4">
+                <h5>Cidade:</h5>
+                <input class="form-control" type="text" value="{{ cliente.cidade }}" readonly>
+            </div>
+            <div class="col-md-4">
+                <h5>UF:</h5>
+                <input class="form-control" type="text" value="{{ cliente.uf }}" readonly>
+            </div>
+        </div>
+        <hr>
+        <div class="row mb-3">
+            <div class="col text-center">
+                <hr>
+                <div class="d-flex justify-content-center">
+                    <div class="mr-2">
+                        <a href="update_cliente/{{ cliente.id }}"><img src="{% static 'images/editar.png' %}" height="35px"></a>
+                    </div>
+                    <div>
+                        <a href="delete_cliente/{{ cliente.id }}"><img src="{% static 'images/excluir.png' %}" height="35px"></a>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 </div>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script src="{% static 'js/apicep.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="{% static 'js/apicep.js' %}"></script>
 </body>
 </html>
