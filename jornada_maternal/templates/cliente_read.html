@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página de Informações Adicionais</title>
-    <link rel="stylesheet" href="{% static 'css/clienteread.css' %}">
+    <link rel="stylesheet" href="{% static 'css/clienteread1.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 </head>
@@ -19,31 +19,28 @@
         </li>
     </ul>
 
-    <h2 class="text-center">Informações Adicionais das Gestantes</h2>
+    <h2 class="text-center">Informações das Gestantes</h2>
 
     {% for cliente in clientes %}
-        <div class="cliente-section border-transparent">
         <div class="row mb-3">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <h5>Nome:</h5>
                 <input class="form-control" type="text" value="{{ cliente.nome }}" readonly>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <h5>CPF:</h5>
                 <input class="form-control" type="text" value="{{ cliente.cpf|slice:'0:3' }}.{{ cliente.cpf|slice:'3:6' }}.{{ cliente.cpf|slice:'6:9' }}-{{ cliente.cpf|slice:'9:11' }}" readonly>
             </div>
-        </div>
-        <div class="row mb-3">
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <h5>Data de Nascimento:</h5>
                 <input class="form-control" type="text" value="{{ cliente.datanascimento|date:'d/m/Y' }}" readonly>
             </div>
-            <div class="col-md-6">
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-4">
                 <h5>Número do SUS:</h5>
                 <input class="form-control" type="text" value="{{ cliente.sus|slice:'0:3' }}.{{ cliente.sus|slice:'3:6' }}.{{ cliente.sus|slice:'6:9' }} {{ cliente.sus|slice:'9:12' }}" readonly>
             </div>
-        </div>
-        <div class="row mb-3">
             <div class="col-md-4">
                 <h5>Nome da Criança:</h5>
                 <input class="form-control" type="text" value="{{ cliente.nomecrianca }}" readonly>
@@ -52,12 +49,12 @@
                 <h5>Gênero da Criança:</h5>
                 <input class="form-control" type="text" value="{{ cliente.generocrianca }}" readonly>
             </div>
+        </div>
+        <div class="row mb-3">
             <div class="col-md-4">
                 <h5>Idade da Criança:</h5>
                 <input class="form-control" type="number" value="{{ cliente.idadecrianca }}" readonly>
             </div>
-        </div>
-        <div class="row mb-3">
             <div class="col-md-4">
                 <h5>Cep:</h5>
                 <input class="form-control" type="text" value="{{ cliente.cep }}" readonly>
@@ -66,12 +63,12 @@
                 <h5>Endereço:</h5>
                 <input class="form-control" type="text" value="{{ cliente.endereco }}" readonly>
             </div>
+        </div>
+        <div class="row mb-3">
             <div class="col-md-4">
                 <h5>Bairro:</h5>
                 <input class="form-control" type="text" value="{{ cliente.bairro }}" readonly>
             </div>
-        </div>
-        <div class="row mb-3">
             <div class="col-md-4">
                 <h5>Cidade:</h5>
                 <input class="form-control" type="text" value="{{ cliente.cidade }}" readonly>
@@ -82,11 +79,11 @@
             </div>
         </div>
         <hr>
-        <div class="row mb-3">
+        <div class="row mb-4">
             <div class="col text-center">
                 <hr>
                 <div class="d-flex justify-content-center">
-                    <div class="mr-2">
+                    <div class="mr-5">
                         <a href="update_cliente/{{ cliente.id }}"><img src="{% static 'images/editar.png' %}" height="35px"></a>
                     </div>
                     <div>
@@ -96,7 +93,7 @@
                 <hr>
             </div>
         </div>
-    </div>
+
     {% endfor %}
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

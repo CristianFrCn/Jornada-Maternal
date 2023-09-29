@@ -1,6 +1,6 @@
-/* Remova o import da fonte do Google Fonts, pois já está no HTML */
+
 body {
-    background-image: url('/static/images/Login.jpeg');
+    background-image: url('/static/images/Login0.jpeg');
     background-repeat: repeat-Y;
     background-position: center center;
     background-size: cover;
@@ -81,3 +81,8 @@ h1.text-center {
     font-size: 36px;
     color: #333;
 }
+
+@media (max-width: 768px) {
+    .navbar-brand img {
+        width: 150px;
+    }
