@@ -20,6 +20,9 @@
 
     <h1 class="text-center">Informações das Gestante</h1>
 
+    <P>Olá, {{ request.user.username }},vamos cadastrar?</P>
+
+
     <form id="form" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="form-row">

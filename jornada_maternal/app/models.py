@@ -1,15 +1,7 @@
-from datetime import date
-
-from django.db import models
 from django import forms
-#class User(models.Model):
-   # user_nickname = models.CharField(max_length=100, primary_key=True, default='')
-   # user_nome = models.CharField(max_length=150, default = '')
-  #  user_email = models.EmailField(default='')
-   # user_age = models.IntegerField(default = '0')
+from django.contrib.auth.models import AbstractUser
+from django.db import models
 
-   # def __str__(self):
-     #   return f'Nickname : {self.user_nickname} | E-mail: {self.user_email}'
 class ClienteForm(forms.ModelForm):
     datanascimento = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
 
@@ -35,3 +27,4 @@ class Cliente(models.Model):
 
     def __str__(self):
         return f"{self.nome} - CPF: {self.cpf}"
+

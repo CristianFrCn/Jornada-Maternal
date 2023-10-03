@@ -7,6 +7,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 INSTALLED_APPS = [
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -15,6 +16,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'app'
+
 
 
 ]
@@ -48,6 +50,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'jornada_maternal.wsgi.application'
+
+
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -107,10 +113,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# CORS_ORIGIN_ALL - TRUE
 
-
-CORS_ALL_ORIGINS = [
-    'http://localhost:8080',
-
-]
+# --- Login Logout User --- #
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+EMAIL_BACKEnD = 'django.core.mail.backends.console.EmailBackend'

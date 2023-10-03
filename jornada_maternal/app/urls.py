@@ -9,9 +9,8 @@ router.register(r'cliente', ClienteViewSet, basename="Cliente")
 
 urlpatterns = [
     path('', views.site, name='site'),
-    path('login/', views.login, name='login'),
     path('redefenir/', views.redefenir, name='redefenir' ),
-    path('cadastro/', views.cadastro, name='cadastro'),
+    path('register/', views.register, name='register'),
     path('vacina/', views.vacina, name='vacina'),
     path('prenatal/', views.prenatal, name='prenatal'),
     path('informacoes/', views.informacoes, name='informacoes'),
@@ -21,6 +20,8 @@ urlpatterns = [
     path('noticias/', views.noticias, name='noticias'),
     path('search/', views.search_results, name='search_results'),
     path('menu', views.menu, name='menu'),
+
+    path('accounts/', include('django.contrib.auth.urls')),
 
     path('search/', views.search_results, name='search_results'),
 

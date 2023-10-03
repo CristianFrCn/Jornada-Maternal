@@ -1,6 +1,8 @@
-from django.forms import ModelForm
+
 from django import forms
 from .models import Cliente
+from django.contrib.auth.models import User
+
 
 class ClienteForm(forms.ModelForm):
     class Meta:
@@ -21,3 +23,6 @@ class ClienteForm(forms.ModelForm):
             'nomecrianca': forms.TextInput(attrs={'class': 'form-control'}),
             'generocrianca': forms.Select(attrs={'class': 'form-control'}),
         }
+
+
+
