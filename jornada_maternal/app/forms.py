@@ -1,7 +1,10 @@
-
 from django import forms
 from .models import Cliente
-from django.contrib.auth.models import User
+from .models import ContactMe
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+
+
 
 
 class ClienteForm(forms.ModelForm):
@@ -23,6 +26,16 @@ class ClienteForm(forms.ModelForm):
             'nomecrianca': forms.TextInput(attrs={'class': 'form-control'}),
             'generocrianca': forms.Select(attrs={'class': 'form-control'}),
         }
+
+
+class ContactMeForm(forms.ModelForm):
+    class Meta:
+        model = ContactMe
+        fields = ['name', 'email', 'subject', 'message']
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for field_name, field in self.fields.items():
+            field.widget.attrs['class'] = 'form-control'
 
 
 
